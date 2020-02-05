@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import moment from "moment";
 import Form from "react-bootstrap/Form";
 import InfiniteCalendar from "react-infinite-calendar";
+import ReactDOM from "react-dom";
 
 moment.locale(
   "es",
@@ -21,6 +22,7 @@ class Input extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleModifier = this.handleModifier.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   componentDidMount() {
@@ -46,6 +48,11 @@ class Input extends Component {
     const { target } = evt;
     const { value, name } = target;
     this.setValue(value, name);
+  }
+
+  handleSelect() {
+    const value = this.refs.select.value;
+    this.setValue(value);
   }
 
   handleModifier(value, name) {
@@ -119,7 +126,8 @@ class Input extends Component {
           className={this.props.className}
           value={this.state.value}
           disabled={this.props.disabled}
-          onChange={this.handleChange}
+          onChange={this.handleSelect}
+          ref="select"
         >
           {this.renderOptions()}
         </Form.Control>
