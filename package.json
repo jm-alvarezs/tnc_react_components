@@ -1,0 +1,34 @@
+{
+  "name": "tnc_react_components",
+  "version": "1.0.0",
+  "description": "Reusable componentes using react bootstrap and custom css",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jm-alvarezs/tnc_react_components.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "input",
+    "components",
+    "react",
+    "bootstrap"
+  ],
+  "author": "Juan Manuel Alvarez @ The North Code",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jm-alvarezs/tnc_react_components/issues"
+  },
+  "homepage": "https://github.com/jm-alvarezs/tnc_react_components#readme",
+  "dependencies": {
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-infinite-calendar": "^2.3.1"
+  }
+}
