@@ -36,7 +36,7 @@ class ImageInput extends Component {
     this.handleModifier(file);
   }
 
-  renderImagenes() {
+  renderImagen() {
     if (this.state.src)
       return <Image className="d-block mb-3" src={this.props.base_url + src} />;
   }
@@ -44,7 +44,7 @@ class ImageInput extends Component {
   render() {
     return (
       <Fragment>
-        <div style={{ width: "100%" }}>{this.renderImagenes()}</div>
+        <div style={{ width: "100%" }}>{this.renderImagen()}</div>
         <div style={{ width: "100%" }}>
           <input
             type="file"
