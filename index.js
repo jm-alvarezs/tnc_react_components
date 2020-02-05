@@ -1,3 +1,4 @@
+import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
 import AdminTable from "./components/AdminTable";
 import AdminView from "./components/AdminView";
 import Checkbox from "./components/Checkbox";
