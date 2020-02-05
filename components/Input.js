@@ -32,15 +32,14 @@ class Input extends Component {
   }
 
   toJSDate(date) {
-    if(date) return moment(date).toDate();
+    if (date) return moment(date).toDate();
     return new Date();
   }
 
   setValue(value, name) {
-      if(this.props.type === "date")
-        value = this.getDate(value);
-      this.setState({ value });
-      this.handleModifier(value, name);
+    if (this.props.type === "date") value = this.getDate(value);
+    this.setState({ value });
+    this.handleModifier(value, name);
   }
 
   handleChange(evt) {
@@ -71,6 +70,7 @@ class Input extends Component {
   }
 
   renderCalendar() {
+    const { dark } = this.props;
     if (this.state.showCalendar)
       return (
         <InfiniteCalendar
@@ -87,17 +87,17 @@ class Input extends Component {
             weekStartsOn: 0
           }}
           theme={{
-            selectionColor: "#FC6767",
+            selectionColor: accent,
             textColor: {
               default: "#333",
-              active: "#FFF"
+              active: dark ? "#000" : "#FFF"
             },
-            weekdayColor: "#fff",
-            headerColor: "#FC6767",
+            weekdayColor: dark ? "#000" : "#FF",
+            headerColor: accent,
             floatingNav: {
-              background: "#FC6767",
-              color: "#FFF",
-              chevron: "#FFA726"
+              background: accent,
+              color: dark ? "#000" : "#FFF",
+              chevron: accentLight
             }
           }}
           displayOptions={{
@@ -141,7 +141,9 @@ Input.PropTypes = {
   as: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.object,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  accent: PropTypes.string,
+  accentLight: PropTypes.string
 };
 
 export default Input;
