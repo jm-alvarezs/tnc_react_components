@@ -110,14 +110,57 @@ class Input extends Component {
 
   renderType() {
     if (this.props.type === "select")
-      return <Form.Control>{this.renderOptions()}</Form.Control>;
+      return (
+        <Form.Control
+          as={this.props.as}
+          name={this.props.name}
+          placeholder={this.props.placeholder}
+          style={this.props.style}
+          className={this.props.className}
+          value={this.state.value}
+          disabled={this.props.disabled}
+          onChange={this.handleChange}
+        >
+          {this.renderOptions()}
+        </Form.Control>
+      );
     if (this.props.type === "date")
       return (
         <Fragment>
           {this.renderCalendar()}
-          <Form.Control value={this.state.value} disabled={true} />
+          <Form.Control
+            as={this.props.as}
+            name={this.props.name}
+            placeholder={this.props.placeholder}
+            style={this.props.style}
+            className={this.props.className}
+            value={this.state.value}
+            disabled={true}
+          />
         </Fragment>
       );
+    return (
+      <Form.Control
+        as={this.props.as}
+        type={this.props.type}
+        name={this.props.name}
+        placeholder={this.props.placeholder}
+        style={this.props.style}
+        className={this.props.className}
+        value={this.state.value}
+        disabled={this.props.disabled}
+        onChange={this.handleChange}
+        onKeyPress={this.props.onKeyPress}
+        min={this.props.min}
+        max={this.props.max}
+        accept={this.props.accept}
+      />
+    );
+  }
+
+  renderLabel() {
+    if (this.props.label)
+      return <Form.Label for={this.props.name}>{this.props.label}</Form.Label>;
   }
 
   render() {
@@ -143,7 +186,8 @@ Input.PropTypes = {
   style: PropTypes.object,
   disabled: PropTypes.bool,
   accent: PropTypes.string,
-  accentLight: PropTypes.string
+  accentLight: PropTypes.string,
+  onKeyPress: PropTypes.func
 };
 
 export default Input;
