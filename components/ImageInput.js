@@ -57,7 +57,7 @@ class ImageInput extends Component {
             className="pt-2 pb-2"
             style={{ position: "absolute", zIndex: 1 }}
           >
-            <FontAwesomeIcon icon="camera" className="mr-2" /> Subir Imagen
+            <FontAwesomeIcon icon="camera" className="mr-2" /> {this.props.placeholder}
           </Button>
         </div>
       </Fragment>
@@ -70,7 +70,8 @@ ImageInput.PropTypes = {
   src: PropTypes.string,
   modifier: PropTypes.func,
   args: PropTypes.string || PropTypes.array,
-  accept: PropTypes.string
+  accept: PropTypes.string,
+  placeholder: PropTypes.string
 };
 
 export default ImageInput;
