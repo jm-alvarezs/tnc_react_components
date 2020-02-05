@@ -1,6 +1,6 @@
 {
   "name": "tnc_react_components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reusable componentes using react bootstrap and custom css",
   "main": "index.js",
   "scripts": {
